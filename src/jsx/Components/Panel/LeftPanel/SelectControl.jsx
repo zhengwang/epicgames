@@ -18,7 +18,7 @@ export const SelectControl = (props) => {
                 {open ? <img src="assets/images/arrow-up.svg" /> : <img src="assets/images/arrow-down.svg" />}                
             </div>
         </div>
-        {formik.errors.column_name && <div className="eg-error">{formik.errors.column_name}</div>}
+        {formik.errors.column_name && formik.touched.item_name && <div className="eg-error">{formik.errors.column_name}</div>}
 
         {open && ["COLUMN 1", "COLUMN 2"].map((item, idx) => {
             return <div className={`row align-items-center eg-select-item ${idx === 0 ? "" : "mt-1"}`} onClick = {e => {

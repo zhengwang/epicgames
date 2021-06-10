@@ -1,16 +1,27 @@
 import React from "react";
 import { SelectControl } from "./SelectControl.jsx";
 import { useFormik } from 'formik';
+import { connect, useDispatch, useSelector, useStore } from 'react-redux'
+import { ADD_ITEM } from "../../../misc/index.js";
 
-export const ItemPanel = (props) => {
+export const ItemPanel = (props) => {    
+    // const all_items = useSelector((state) => state.all_items);
+    // console.log(all_items);
+    const dispatch = useDispatch();
+
     const formik = useFormik(
         {
             initialValues: {
                 item_name: "",
                 column_name: ""
             },
-            onSubmit: values => {
+            onSubmit: values => {                              
                 console.log(values);
+                dispatch({
+                    type: ADD_ITEM, 
+                    column_name: values.column_name,
+                    item_name: values.item_name
+                });
             },
             validate: values => {
                 const errors = {};
@@ -38,6 +49,7 @@ export const ItemPanel = (props) => {
                         autoComplete="none"
                     />
                     {formik.errors.item_name && formik.touched.item_name && <div className="eg-error">{formik.errors.item_name}</div>}
+                    
                     <SelectControl formik={formik} />
 
                     <button type="submit" className="eg-btn-additem">ADD ITEM</button>

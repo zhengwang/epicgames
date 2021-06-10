@@ -1,6 +1,5 @@
 import React from "react";
 import { ColumnPanel, ItemPanel } from "./Panel";
-// import { ItemPanel } from "./ItemPanel.jsx";
 
 export const Panel = (props) => {
     return <>
