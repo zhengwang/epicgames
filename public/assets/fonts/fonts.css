@@ -1,23 +1,24 @@
 @font-face {
     font-family: 'Merriweather-Bold';
     font-weight: bold;
-    src: url(Merriweather-Bold.ttf) format('truetype');
+    src: url('./Merriweather-Bold.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Merriweather-Italic';
     font-weight: normal;
-    src: url(Merriweather-Italic.ttf) format('truetype');
+    font-style: italic;
+    src: url('./Merriweather-Italic.ttf') format('truetype');
   }
 
 @font-face {
   font-family: 'Merriweather-Regular';
   font-weight: normal;
-  src: url(Merriweather-Regular.ttf) format('truetype');
+  src: url('./Merriweather-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeue-Regular';
   font-weight: normal;
-  src: url(HelveticalNeue.ttf) format('truetype');
+  src: url('./HelveticalNeue.ttf') format('truetype');
 }

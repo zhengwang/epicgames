@@ -1,6 +1,31 @@
 // const fs = require("fs");
-// var path = require("path");
+var path = require("path");
 var webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
+const ASSET_PATH = process.env.ASSET_PATH || '/';
+
+const htmlwebpackplugin = new HtmlWebPackPlugin({
+    hash: true,
+    template: "./src/static/index.html",
+    filename: "./index.html",
+    minify: true
+});
+
+const copywebpackplugin = new CopyWebpackPlugin({
+    patterns: [
+        {
+            from: 'src/assets/images',
+            to: 'assets/images'
+        },
+        {
+            from: "src/assets/fonts",
+            to: "assets/fonts"
+        }
+    ]
+});
 
 const basic_config = {
     module: {
@@ -11,7 +36,7 @@ const basic_config = {
                 loader: "babel-loader",
                 options: {
                     presets: [
-                        ["@babel/preset-env", {modules: false}], 
+                        ["@babel/preset-env", { modules: false }],
                         "@babel/preset-react"
                     ]
                 }
@@ -19,21 +44,27 @@ const basic_config = {
         },
         {
             test: /\.css$/i,
-            use: ['style-loader', 'css-loader']
+            use: ['style-loader', 'css-loader'],
         },
         {
             test: /\.dat$/,
             use: ['file-loader', {
                 loader: 'raw-loader'
             }]
+        },
+        {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            use: ['file-loader',
+                {
+                    loader: 'url-loader',
+                }
+            ],
+            type: "asset/resource"
         }]
     },
     optimization: {
         minimize: true
     },
-    // node: {
-    //     fs: "empty"
-    // },
     mode: "production",
     devServer: {
         contentBase: "./public"
@@ -42,13 +73,15 @@ const basic_config = {
 
 var epic_config = Object.assign({
     entry: {
-        epicgame: ["./src/app.js"]
+        epicgame: ["./src/jsx/app.js"]
     },
     output: {
-        path: __dirname,
-        filename: "public/includes/[name].min.js",
+        path: path.resolve(__dirname, "public"),
+        filename: "includes/[name].min.js",
+        publicPath: path.resolve(__dirname, ASSET_PATH),
+        // assetModuleFilename: "includes/fonts/[hash][ext][query]",
     },
-    plugins: [new webpack.ProvidePlugin({Promise: "es6-promise"})]
+    plugins: [].concat(htmlwebpackplugin, copywebpackplugin).concat(new webpack.ProvidePlugin({ Promise: "es6-promise" }))
 }, basic_config);
 
 module.exports = [epic_config];
