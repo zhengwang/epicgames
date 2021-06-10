@@ -86,7 +86,7 @@ p.subtitle {
     padding: 22px 10px;
     margin: 0;
     color: #474d57;
-    background-color: #ffffff;
+    background-color: #ffffff;        
   }
 
   .eg-search-control {
@@ -97,10 +97,11 @@ p.subtitle {
   }
 
   .eg-additem-control {
-      position: absolute;
-      top: 0;
+      position: relative;
+      // top: 0;
       width: 100%;
       padding: 0 2% 0 0;
+      height: 400px;
   }
 
   .eg-search {      
@@ -122,12 +123,15 @@ p.subtitle {
   }
 
   .eg-btn-additem {
-    width: 100%;
+    width: 98%;
     height: 73px;
     background-color: #bcc0c7;
     border: 4px solid #ffffff;
     font-weight: bold;
     color: white;
+    // margin-top: 153px;
+    position: absolute;
+    bottom: 0;    
   }
   .eg-btn-additem:hover {
     background-image: linear-gradient(0deg, #556175 0%, #b5c5d7 100%);
@@ -185,17 +189,19 @@ p.subtitle {
     cursor: pointer;
   }
 
+  .eg-error {
+    color: red;
+  }
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
-    h1 {
-        font-size: 36px;
+    #app {
+      padding: 15px;
     }
-
-    .eg-left-itempanel {
-      height: 400px;
-    }
-
-    .eg-additem-control, .eg-search-control {
-      padding: 0;
-    }
+    h1 {font-size: 36px;}
+    .eg-left-itempanel {position: relative; height: fit-content;}    
+    .eg-additem-control {height: auto;}
+    .eg-additem-control, .eg-search-control {padding: 0;}
+    .eg-search-control { position: relative;}
+    .eg-btn-additem { width: 100%; margin-top: 1.5rem; position: relative; bottom: auto;}        
   }
