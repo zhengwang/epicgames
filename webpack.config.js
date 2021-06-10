@@ -23,6 +23,10 @@ const copywebpackplugin = new CopyWebpackPlugin({
         {
             from: "src/static/assets/fonts",
             to: "assets/fonts"
+        },
+        {
+            from: "src/static/assets/css",
+            to: "assets/css"
         }
     ]
 });
@@ -45,6 +49,22 @@ const basic_config = {
         {
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
+        },
+        {
+            test: /\.s[ac]ss$/i,
+            use: [
+                "style-loader",
+                "css-loader",
+                {
+                    loader: "sass-loader",
+                    options: {
+                        sourceMap: false,
+                        sassOptions: {
+                            outputStyle: "compressed",
+                        },
+                    },
+                }
+            ]
         },
         {
             test: /\.dat$/,
