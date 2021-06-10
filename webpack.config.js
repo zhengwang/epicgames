@@ -17,11 +17,11 @@ const htmlwebpackplugin = new HtmlWebPackPlugin({
 const copywebpackplugin = new CopyWebpackPlugin({
     patterns: [
         {
-            from: 'src/assets/images',
+            from: 'src/static/assets/images',
             to: 'assets/images'
         },
         {
-            from: "src/assets/fonts",
+            from: "src/static/assets/fonts",
             to: "assets/fonts"
         }
     ]
