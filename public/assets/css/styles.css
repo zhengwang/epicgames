@@ -190,4 +190,12 @@ p.subtitle {
     h1 {
         font-size: 36px;
     }
+
+    .eg-left-itempanel {
+      height: 400px;
+    }
+
+    .eg-additem-control, .eg-search-control {
+      padding: 0;
+    }
   }
