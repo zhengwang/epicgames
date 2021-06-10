@@ -1,6 +1,6 @@
 import React from "react";
-import { ColumnPanel } from "./ColumnPanel.jsx";
-import { ItemPanel } from "./ItemPanel.jsx";
+import { ColumnPanel, ItemPanel } from "./Panel";
+// import { ItemPanel } from "./ItemPanel.jsx";
 
 export const Panel = (props) => {
     return <>
