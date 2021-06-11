@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const SelectControl = (props) => {
     const { formik } = props;
     const [open, setOpen] = useState(false);
     const [columnName, setColumnName] = useState(!formik.values.column_name ? "CHOOSE COLUMN" : formik.values.column_name);
+    
+    // console.log(formik.dirty);
+    useEffect(() => {
+        if (!formik.dirty) {
+            setColumnName("CHOOSE COLUMN");
+        }
+    }, [formik.dirty]);
 
     return <div className="eg-select mt-4">        
         <div className="row align-items-center eg-select-default-item"

@@ -13,13 +13,14 @@ export const ItemPanel = (props) => {
                 item_name: "",
                 column_name: ""
             },
-            onSubmit: values => {
-                // console.log(values);
+            enableReinitialize: true,
+            onSubmit: values => {                
                 dispatch({
                     type: ADD_ITEM,
                     column_name: values.column_name,
                     item_name: values.item_name
                 });
+                formik.resetForm();
             },
             validate: values => {
                 const errors = {};
