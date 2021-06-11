@@ -1,8 +1,6 @@
-// const fs = require("fs");
 var path = require("path");
 var webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-// const HtmlReplaceWebpackPlugin = require("html-replace-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
@@ -98,7 +96,7 @@ var epic_config = Object.assign({
     output: {
         path: path.resolve(__dirname, "public"),
         filename: "includes/[name].min.js",
-        publicPath: path.resolve(__dirname, ASSET_PATH),
+        // publicPath: path.resolve(__dirname, ASSET_PATH),
         // assetModuleFilename: "includes/fonts/[hash][ext][query]",
     },
     plugins: [].concat(htmlwebpackplugin, copywebpackplugin).concat(new webpack.ProvidePlugin({ Promise: "es6-promise" }))
