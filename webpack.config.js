@@ -9,7 +9,8 @@ const htmlwebpackplugin = new HtmlWebPackPlugin({
     hash: true,
     template: "./src/static/index.html",
     filename: "./index.html",
-    minify: true
+    minify: true,
+    favicon: "./src/static/favicon.ico"
 });
 
 const copywebpackplugin = new CopyWebpackPlugin({

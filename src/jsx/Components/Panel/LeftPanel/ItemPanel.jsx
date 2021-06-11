@@ -46,6 +46,7 @@ export const ItemPanel = (props) => {
                         value={formik.values.item_name}
                         onChange={formik.handleChange}
                         autoComplete="none"
+                        maxLength="20"
                     />
                     {formik.errors.item_name && formik.touched.item_name && <div className="eg-error">{formik.errors.item_name}</div>}
 
