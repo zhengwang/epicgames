@@ -3,22 +3,30 @@
 body {  
     background-color: base.$page-background-color;
     font-family: base.$page-font-family;
-    margin: 50px 0;
+    margin: 115px 0;
 }
 h1 {
-    color: white;
+    color: #ffffff;
     font-family: base.$title-font-family;
     font-size: 72px;
+    font-weight: 300;
 }
 
 p.subtitle {
     color: #8fffee;
     font-size: 23px;
+    max-width: 552px;
+    text-align: left;
+    line-height: 30px;
 }
 
 .row>* {
     padding-left: 0;
     padding-right: 0;
+}
+
+.eg-container {
+  max-width: 943px;
 }
 
 .eg-title {
@@ -33,17 +41,31 @@ p.subtitle {
     cursor:default !important;
 }
 
+.eg-panel {
+  margin-top: 74px;
+}
+
 .eg-left-itempanel {
     position: relative;
     height: 530px;
+    max-width: 281px;
+}
+
+.eg-right-columnpanel {
+  max-width: 648px;
+  margin: 0;
 }
 
 .eg-input {
     font-size: 16px;
+    font-weight: 300;
     color: #ffffff;
+    letter-spacing: 0px;
+    text-align: left;
+
     width: 100%;    
     height: 73px;
-    background-color: #9aa0ab;
+    background-color: rgba(63,63,63,0);
     border: 4px solid #ffffff;
     padding: 0 10px;
 }
@@ -60,41 +82,59 @@ p.subtitle {
     color: #ffffff;
   }
 
-  .eg-select {
-    color:white;
+  .eg-select {        
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    font-family: "Helvetica Neue";
+    text-align: left;
+    line-height: 22px;
+
     width: 100%;
-    background-color:#9aa0ab;
+    background-color: rgba(255,255,255,0);
+    border: 4px solid #ffffff;    
   }
 
-  .eg-select-default-item {
-    padding: 22px 10px;
-    margin: 0;
-    border: 5px solid white;
+  .eg-select {
+    .default-item {
+      padding: 22px 10px;
+      margin: 0;
+      // border: 5px solid white;
+    }    
   }
 
-  .eg-select-arrow {
-    text-align: right;
+  .eg-select {
+    .arrow {
+      text-align: right;
+    }
   }
 
-  .eg-select-item {
-    padding: 22px 10px;
-    margin: 0;
-    color: #474d57;
+  .eg-select {
+    .item {
+      padding: 22px 10px;
+      margin: 0;
+      color: #79818f;
+      font-weight: 500;
+      background-color: #ffffff;   
     background-color: #ffffff;        
+      background-color: #ffffff;   
+    }
+    .item:hover {
+      color: #474d57;      
+    }
   }
 
   .eg-search-control {
       position: absolute;
       bottom: 0;
-      width: 100%;
-      padding: 0 2% 0 0;
+      width: 100%;      
+      // padding: 0 2% 0 0;
   }
 
   .eg-additem-control {
-      position: relative;
-      // top: 0;
-      width: 100%;
-      padding: 0 2% 0 0;
+      position: relative;      
+      width: 100%;      
+      // padding: 0 2% 0 0;
       height: 400px;
   }
 
@@ -106,6 +146,8 @@ p.subtitle {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat scroll 95% 50%;
     padding:0 10px;    
     color: white;
+    font-size: 16px;
+    font-weight: 300;
   }
 
   .eg-lbl-search {
@@ -117,13 +159,13 @@ p.subtitle {
   }
 
   .eg-btn-additem {
-    width: 98%;
+    width: 100%;
     height: 73px;
-    background-color: #bcc0c7;
+    background-color: rgba(255,255,255,0.5019607843137255);
     border: 4px solid #ffffff;
-    font-weight: bold;
-    color: white;
-    // margin-top: 153px;
+    font-weight: normal;
+    font-size: 20px;
+    color: white;    
     position: absolute;
     bottom: 0;    
   }
@@ -131,20 +173,11 @@ p.subtitle {
     background-image: linear-gradient(0deg, #556175 0%, #b5c5d7 100%);
   }
 
-  .eg-item {    
-    height: 65px;
-    width: 100%;
-    /* margin: 5px 0; */
-    position: relative;
-    color: white;
-  }
-
-  .eg-item.odd {    
-    background-color: #9ba1ab;
-  }
-  .eg-item.even {
-    color: #79818f;
-    background-color: #f2f3f4;
+  .eg-column {
+    background-color: #ebebeb;
+    border: 8.49px solid #ffffff;
+    max-height: 535px;
+    overflow: auto;
   }
 
   .eg-topbar {
@@ -152,49 +185,73 @@ p.subtitle {
     height: 65px;
     background-image: linear-gradient(0deg, #495468 0%, #b8c8db 100%);
     position: relative;
-    color: white;
   }
 
-  .eg-topbar{
+  .eg-topbar {
     .lbl {
-      top: 30%;
-      left: 40%;
-      position: absolute;
+      font-size: 20px;
+      letter-spacing: 1px;
+      line-height: 36px;
+      color: #ffffff;
+      font-weight: 500;
+      text-align: center;      
+      padding-top: 3%;    
+      width: 100%;
     }
   } 
 
+  .eg-item {    
+    height: 65px;
+    width: 100%;
+    /* margin: 5px 0; */
+    position: relative;
+    background-color: #ffffff;
+  }
+
   .eg-item {
     .lbl {
+      font-size: 23px;
+      letter-spacing: 1px;      
+      font-weight: 300;
+      text-align: left;
       position: absolute;
       top: 30%;
-      left: 5%;
+      left: 8%;
     }
   }
 
-  .eg-column {
-      border: 5px solid #ffffff;
-      max-height: 530px;
-      overflow: auto;
+  .eg-item {
+    .close-btn {
+      position: absolute;
+      top: 23%;
+      right: 15px;
+      cursor: pointer;
+    }
   }
 
-  .eg-close-btn {
-    position: absolute;
-    top: 23%;
-    right: 10px;
-    cursor: pointer;
+  .eg-item.odd {    
+    color: #ffffff;
+    background-color: #9ba1ab;
+  }
+
+  .eg-item.even {       
+    color: #79818f; 
+    background-color: #f2f3f4;
   }
 
   .eg-error {
     color: red;
   }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 945px) {
     /* For mobile phones: */
-    #app {
-      padding: 15px;
-    }
+    body {margin: 0;}
+    #app { padding: 15px; }
+    .eg-panel { margin-top: 0; }
     h1 {font-size: 36px;}
-    .eg-left-itempanel {position: relative; height: auto;}    
+    
+    .eg-left-itempanel {position: relative; height: auto; max-width: 100%;} 
+    .eg-right-columnpanel {max-width: 100%;}   
     .eg-additem-control {height: auto;}
     .eg-additem-control, .eg-search-control {padding: 0;}
     .eg-search-control { position: relative;}

@@ -14,7 +14,9 @@ export const Item = (props) => {
     return <div className={`eg-item ${clsname}`}>
         <label className="lbl">{item.item_name}</label>
         
-        {dispatch && <img src={idx % 2 === 0 ? "assets/images/plus-black.svg" : "assets/images/plus-white.svg"} className="eg-close-btn" 
-        onClick={handleClick} />}
+        {dispatch && <img 
+                        src={idx % 2 === 0 ? "assets/images/plus-black.svg" : "assets/images/plus-white.svg"} 
+                        className="close-btn" 
+                        onClick={handleClick} />}
     </div>
 }

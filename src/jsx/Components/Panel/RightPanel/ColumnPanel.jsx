@@ -20,8 +20,8 @@ export const ColumnPanel = (props) => {
             setCookie("epicgame", all_items);
     }, [all_items]);
 
-    return <>
+    return <div className="col-12 row eg-right-columnpanel">
         <Column column_name="COLUMN 1" />
         <Column column_name="COLUMN 2" />
-    </>
+    </div>
 }
