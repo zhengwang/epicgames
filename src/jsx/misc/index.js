@@ -1,14 +1,9 @@
 export const ADD_ITEM = "ADD_ITEM";
 export const DEL_ITEM = "DEL_ITEM";
 export const FILTER_ITEM = "FILTER_ITEM";
+export const PREFILE_DATA = "PREFILE_DATA";
 
-export const rootReducer = (state = {all_items: [
-    {column_name: "COLUMN 1", item_name: "ITEM1", hidden: false},
-    {column_name: "COLUMN 2", item_name: "ITEM2", hidden: false},
-    {column_name: "COLUMN 1", item_name: "ITEM3", hidden: false},
-    {column_name: "COLUMN 1", item_name: "ITEM4", hidden: false},
-    {column_name: "COLUMN 1", item_name: "ITEM FIVE", hidden: false}
-]}, action) => {
+export const rootReducer = (state = {all_items: []}, action) => {
     let temp = state.all_items.slice();
     
     switch (action.type) {
@@ -38,6 +33,12 @@ export const rootReducer = (state = {all_items: [
             });  
             
             return Object.assign({}, state, {all_items: temp});
+        case PREFILE_DATA:
+            action.all_items.forEach(item => {
+                item.hidden = false;
+            });
+            
+            return Object.assign({}, state, {all_items: action.all_items});
         default:
             return state;
     }

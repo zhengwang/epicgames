@@ -5,8 +5,6 @@ import { connect, useDispatch, useSelector, useStore } from 'react-redux'
 import { ADD_ITEM, FILTER_ITEM } from "../../../misc/index.js";
 
 export const ItemPanel = (props) => {
-    // const all_items = useSelector((state) => state.all_items);
-    // console.log(all_items);
     const dispatch = useDispatch();
 
     const formik = useFormik(
