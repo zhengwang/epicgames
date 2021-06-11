@@ -2,9 +2,9 @@ import React from "react";
 import { SelectControl } from "./SelectControl.jsx";
 import { useFormik } from 'formik';
 import { connect, useDispatch, useSelector, useStore } from 'react-redux'
-import { ADD_ITEM } from "../../../misc/index.js";
+import { ADD_ITEM, FILTER_ITEM } from "../../../misc/index.js";
 
-export const ItemPanel = (props) => {    
+export const ItemPanel = (props) => {
     // const all_items = useSelector((state) => state.all_items);
     // console.log(all_items);
     const dispatch = useDispatch();
@@ -15,10 +15,10 @@ export const ItemPanel = (props) => {
                 item_name: "",
                 column_name: ""
             },
-            onSubmit: values => {                              
-                console.log(values);
+            onSubmit: values => {
+                // console.log(values);
                 dispatch({
-                    type: ADD_ITEM, 
+                    type: ADD_ITEM,
                     column_name: values.column_name,
                     item_name: values.item_name
                 });
@@ -49,15 +49,21 @@ export const ItemPanel = (props) => {
                         autoComplete="none"
                     />
                     {formik.errors.item_name && formik.touched.item_name && <div className="eg-error">{formik.errors.item_name}</div>}
-                    
+
                     <SelectControl formik={formik} />
 
-                    <button type="submit" className="eg-btn-additem">ADD ITEM</button>
+                    <button type="submit" className="eg-btn-additem">
+                        ADD ITEM
+                    </button>
                 </div>
             </form>
-            <div className="eg-search-control">                
+            <div className="eg-search-control">
                 <label className="eg-lbl-search">SEARCH AN ITEM</label>
-                <input className="eg-search" placeholder="SEARCH ITEM" />
+                <input className="eg-search" placeholder="SEARCH ITEM" onChange={e => {
+                    // console.log(e.target.value);
+                    const item_name = e.target.value;
+                    dispatch({type: FILTER_ITEM, item_name});
+                }} />
             </div>
         </div>
     </>

@@ -4,7 +4,7 @@ import { Item } from "./Item.jsx";
 
 export const Column = (props) => {
     const { column_name } = props;
-    const itemlist = useSelector(state => state.all_items.filter(item => item.column_name === column_name));
+    const itemlist = useSelector(state => state.all_items ? state.all_items.filter(item => !item.hidden && item.column_name === column_name):[]);
     // console.log(itemlist);
 
     return <>
