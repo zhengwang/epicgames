@@ -9,15 +9,17 @@ h1 {
     color: #ffffff;
     font-family: base.$title-font-family;
     font-size: 72px;
+    font-style: italic;
     font-weight: 300;
+    text-align: left;
 }
 
 p.subtitle {
     color: #8fffee;
     font-size: 23px;
-    max-width: 552px;
-    text-align: left;
+    max-width: 552px;    
     line-height: 30px;
+    text-align: left;
 }
 
 .row>* {
@@ -35,9 +37,12 @@ p.subtitle {
     height: 55px;
     background-image: linear-gradient(0deg, #818fa1 0%, rgba(153,167,185,0.6) 100%);
     border-style: none;
-    text-transform: uppercase;
-    text-align: center;
+    text-transform: uppercase;    
     font-size: 24px;    
+    letter-spacing: 1px;
+    line-height: 36px;
+    font-weight: 500;
+    text-align: center;
     cursor:default !important;
 }
 
@@ -47,12 +52,13 @@ p.subtitle {
 
 .eg-left-itempanel {
     position: relative;
-    height: 530px;
-    max-width: 281px;
+    height: 535px;
+    max-width: 280px;
 }
 
 .eg-right-columnpanel {
-  max-width: 648px;
+  max-width: 647px;
+  height: 535px;
   margin: 0;
 }
 
@@ -99,25 +105,21 @@ p.subtitle {
     .default-item {
       padding: 22px 10px;
       margin: 0;
-      // border: 5px solid white;
+      height: 73px;
     }    
-  }
 
-  .eg-select {
     .arrow {
       text-align: right;
     }
-  }
 
-  .eg-select {
     .item {
       padding: 22px 10px;
       margin: 0;
       color: #79818f;
       font-weight: 500;
       background-color: #ffffff;   
-    background-color: #ffffff;        
-      background-color: #ffffff;   
+      height: 73px;
+      border: 2px solid #ffffff;
     }
     .item:hover {
       color: #474d57;      
@@ -127,15 +129,13 @@ p.subtitle {
   .eg-search-control {
       position: absolute;
       bottom: 0;
-      width: 100%;      
-      // padding: 0 2% 0 0;
+      width: 100%;            
   }
 
   .eg-additem-control {
       position: relative;      
-      width: 100%;      
-      // padding: 0 2% 0 0;
-      height: 400px;
+      width: 100%;            
+      height: 405px;
   }
 
   .eg-search {      
@@ -145,7 +145,7 @@ p.subtitle {
     border: 4px solid #ffffff;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat scroll 95% 50%;
     padding:0 10px;    
-    color: white;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 300;
   }
@@ -156,6 +156,7 @@ p.subtitle {
       line-height: 36px;
       color: #ffffff;
       font-weight: bold;
+      text-align: center;
   }
 
   .eg-btn-additem {

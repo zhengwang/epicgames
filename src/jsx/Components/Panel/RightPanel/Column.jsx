@@ -8,7 +8,7 @@ export const Column = (props) => {
     
 
     return <>
-        <div className="col-12 col-md-6 mt-4 eg-column">
+        <div className="col-12 col-md-6 eg-column">
             <div className="eg-topbar">
                 <label className="lbl">{column_name}</label>
             </div>
