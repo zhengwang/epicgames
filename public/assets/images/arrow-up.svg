@@ -1,0 +1,18 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 7" width="14" height="7">
+	<title>DESKTOP</title>
+	<defs>
+		<image width="16" height="9" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAPUlEQVQokbWQsQ0AIAzDekJP7Cl8biaWCmgqhKWM9hCznwABxIu86EWS3IscZC1SyPeIKO8jgAOjOZc+qZj8Os/bLp+YUAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="DESKTOP">
+		<g id="ADD AN ITEM">
+			<g id="CHOOSE COLUMN - DROP">
+				<g id="CHOOSE COLUMN">
+					<use id="Arrow" href="#img1" transform="matrix(1,0,0,1,-1,-1)"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,20 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+	<title>DESKTOP</title>
+	<defs>
+		<image width="34" height="34" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAABkElEQVRYhc2YsU7DMBCGO2RvFgbUwe9TiUq8CQNI3TtUogOMLFVTsTAzoK5sHYoaEfYy9i0+Bi7CCXbi1HGak7Kc/+T/5OtVPg8GfQ9AAXfABjhwehzkG7eAagIwBNYexnWxBoZ1ECPgS174Bu6BqxZ2dwIs5JuIx8gmjoAPES59zSugXsRjB0QmwZMIXkNBaF5L8XosLyitHP8p2weJtDIpfWEqyXloCM1zLp5TPbmV5LhDkLF4bvXkEaArCM0X4FhO1IIAMbACYh+N1dcFRAz2It2bjFw0bYAkFKNgVILIIwkBEgOpCcYCkQbZkQqYT3kaQXiBVMA0hvAG0WAyA0TmCtEmSLkceZm6AcH8w9Sjtm29QSwQmaFMTjAngVggUv7a19jaIUDKf2iF7rDAJKF2JDcytqiLxhtEM0qqDFw0VSC9OQb05mDUm6OikuR5D8+yOJOFLsaJZ/Ga2Sh3IlgFhMgHrHfr7gOXFEfOBTBpwfwaeKA4cl7UvXT+IbwEpPi9SmjjWuINuKHJtcS54gfeV8wY+OxBQgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="DESKTOP">
+		<g id="ADD AN ITEM">
+			<g id="COLUMN 1">
+				<g id="item">
+					<g id="CLOSE">
+						<use id="Plus copy 3" href="#img1" transform="matrix(1,0,0,1,-1,-1)"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
