@@ -17,7 +17,7 @@ export const ColumnPanel = (props) => {
     
     useEffect(() => {
         if(all_items && all_items.length)        
-            setCookie("epicgame", all_items);
+            setCookie("epicgame", all_items, {secure: true});
     }, [all_items]);
 
     return <div className="col-12 row mt-4 eg-right-columnpanel">
